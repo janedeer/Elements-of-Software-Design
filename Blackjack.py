@@ -193,21 +193,20 @@ class Blackjack (object):
     print ('Dealer : ' + str(self.dealer))
 
 
-    # determine the outcome; this code is written for one player
-    # extend it for all players
+    # determine the outcome
     for i in range(len(self.player_list)):
       if (self.player_list[i].has_blackjack()):
-        print ('Player wins')
+        print ('Player ' + str(i + 1) + ' wins')
       elif (player_points[i] > 21):
-        print ('Player loses')
+        print ('Player ' + str(i + 1) + '  loses')
       elif (dealer_points <= 21) and (dealer_points > player_points[i]):
-        print ('Player loses')
+        print ('Player ' + str(i + 1) + '  loses')
       elif (dealer_points < player_points[i]):
-        print ('Player wins')
+        print ('Player ' + str(i + 1) + '  wins')
       elif (dealer_points == player_points[i]):
-        print ('Player ties')
+        print ('Player ' + str(i + 1) + '  ties')
       else:
-        print ('Player wins')
+        print ('Player ' + str(i + 1) + '  wins')
 
   
 def main():
