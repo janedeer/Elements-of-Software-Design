@@ -1,18 +1,6 @@
-#  File: Boxes.py
-
-#  Description: HW 13
-
-#  Student Name: Melanie Sifen
-
-#  Student UT EID: MS69768
-
-#  Course Name: CS 313E
-
-#  Unique Number: 50725
-
-#  Date Created: 3/20
-
-#  Date Last Modified: 3/25
+# Description: This program determines the largest nestable set of boxes given n number of box dimensions.
+# It utilizes a recursive subsets function, and outputs the nestable subsets that match the maximum length.
+# The program reads a file called boxes.txt which consists of the number of boxes and the dimension of each box
 
 
 # checks if box1 fits in box2
