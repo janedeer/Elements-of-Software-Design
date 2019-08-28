@@ -1,25 +1,9 @@
-#  File: Palindrome.py
-
-#  Description: hw 7
-
-#  Student Name: Melanie Sifen
-
-#  Student UT EID: MS69768
-
-#  Course Name: CS 313E
-
-#  Unique Number: 50725
-
-#  Date Created: 2/19/19
-
-#  Date Last Modified: 2/19/19
+#  Description: This program determines if a string is a palindrome
+# If it is not, it creates the shortest palindrome from the word
+# input file palindrome.txt
 
 # this function checks if the string is palindrome
 # returns bool
-
-import time
-start = time.time()
-
 def is_palindrome(s):
     return s == s[::-1]
 
@@ -45,13 +29,10 @@ def main():
         if is_palindrome(line):
             print(line)
         else:
-            print(make_palindrome(line)) # this is more eff. than only make_pal w/out if statement
+            print(make_palindrome(line))
 
 
     inf.close()
 
            
 main()
-
-end = time.time()
-print(end - start)

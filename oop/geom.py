@@ -1,19 +1,5 @@
+# Description: Manipulating basic geometry
 import math
-#  File: Geom.py
-
-#  Description: HW 4
-
-#  Student Name: Melanie Sifen
-
-#  Student UT EID: MS69768
-
-#  Course Name: CS 313E
-
-#  Unique Number: 50725
-
-#  Date Created: 2/10/19
-
-#  Date Last Modified: 2/11/19
 
 class Point (object):
   # constructor 
@@ -326,9 +312,7 @@ def main():
   # close the file geom.txt
   inf.close()
 
-# This line above main is for grading purposes. It will not affect how
-# your code will run while you develop and test it.
-# DO NOT REMOVE THE LINE ABOVE MAIN
+
 if __name__ == "__main__":
   main()
 

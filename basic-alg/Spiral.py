@@ -1,19 +1,5 @@
-#  File: Spiral.py
-
-#  Description: hw 1
-
-#  Student Name: Melanie Sifen
-
-#  Student UT EID: MS69768
-
-#  Course Name: CS 313E
-
-#  Unique Number: 50725
-
-#  Date Created: 1/30/19
-
-#  Date Last Modified: 2/1/19
-
+# Description: This program shifts the numbers of a 2D list into a spiral
+# It also sums the adjacent numbers for any value in the matrix
 
 # this function creates the spiral matrix and calls functions to find adjacent elements and sum them
 def spiral(dim, value):
@@ -79,11 +65,8 @@ def sumAdjacent(matrix, listOfAdjacents):
 
     total = 0
 
-    for position in listOfAdjacents:
-        row = position[0]
-        col = position[1]
-        value = matrix[row][col]
-        total += value
+    for pos in listOfAdjacents:
+        total += matrix[pos[0]][pos[1]]
 
     return total
     

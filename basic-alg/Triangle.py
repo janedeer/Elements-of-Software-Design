@@ -1,23 +1,46 @@
-#  File: Triangle.py
-
-#  Description: HW 16
-
-#  Student's Name: Melanie Sifen
-
-#  Student's UT EID: MS69768
-
-#  Course Name: CS 313E 
-
-#  Unique Number: 50725
-
-#  Date Created: 4/6
-
-#  Date Last Modified: 4/8
+#  Description: This program finds the greatest path sum starting at the top of the triangle and moving only to adjacent numbers on the row below.
+# It compares the time efficiency of four different algorithms: exhaustive search, greedy, divide and conquer, dynamic
+# see input file triangle.txt 
 
 from timeit import timeit
 
+# exhaustive search approach
+def exhaustive_search (grid):
+    
+    paths = path_search(grid)
+    
+    n = len(grid)
+    greatest_sum = 0
+    for path in paths:
+        path_sum = 0
+        for i in range(n):
+            val = grid[i][path[i]]
+            path_sum += val
+            
+        if path_sum > greatest_sum:
+            greatest_sum = path_sum
+    return greatest_sum
 
-
+# helper function for exhaustive search
+def path_search(grid):
+    
+    n = len(grid)
+    paths = [[0]]
+    for i in range(1, n + 1):
+        new_paths = []
+        for path in paths:
+            j = path[-1]
+            path1 = path[:]
+            path2 = path[:]
+            path1.append(j)
+            path2.append(j+1)
+            new_paths.append(path1)
+            new_paths.append(path2)
+        paths = new_paths
+        
+    return paths
+    
+# divide and conquer approach
 def divide_conquer(grid):
     
     if len(grid) == 1:
@@ -37,7 +60,6 @@ def recurse(grid, col):
                max(recurse(grid[1:], col), recurse(grid[1:], col + 1))
 
 
-         
         
 def greedy(grid):    
     idx = 0
@@ -99,9 +121,11 @@ def main ():
 
 
     # output greatest path from exhaustive search
-    #times = timeit ('brute_force({})'.format(grid), 'from __main__ import brute_force', number = 10)
-    #times = times / 10
+    times = timeit ('exhaustive_search({})'.format(grid), 'from __main__ import exhaustive_search', number = 10)
+    times = times / 10
     # print time taken using exhaustive search
+    print("The greatest path sum through exhaustive search is ", exhaustive_search(grid))
+    print("The time taken for the exhaustive approach is ", times, "seconds.")
 
     # output greatest path from greedy approach
     times = timeit ('greedy({})'.format(grid), 'from __main__ import greedy', number = 10)

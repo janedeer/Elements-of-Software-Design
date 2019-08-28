@@ -1,19 +1,6 @@
-#  File: OfficeSpace.py
-
-#  Description: hw 5
-
-#  Student Name: Melanie Sifen
-
-#  Student UT EID: MS69768
-
-#  Course Name: CS 313E
-
-#  Unique Number: 50725
-
-#  Date Created: 2/12/19
-
-#  Date Last Modified: 2/15/19
-
+# Description: The company that you work for is moving to a larger building. The new office is rectangular and will be subdivided into cubicles. Your employees want to request particular positions for their cubicles.
+# You want to set up a system that lets them make their requests.
+# see office.txt and office-3.txt for input file
 
 # Create point class
 class Point(object):
@@ -141,7 +128,7 @@ def main():
     while line != "":
         coords = line.strip()
         coords = line.split()
-        try:
+        try: # this code is still in progress
             x = int(coords[0])
             y = int(coords[1])
             officeSpace = Rectangle(0, 0 , x, y)

@@ -1,19 +1,7 @@
-#  File: Work.py 
-
-#  Description: hw 10
-
-#  Student Name:  Melanie Sifen
-
-#  Student UT EID:  MS69768
-
-#  Course Name: CS 313E
-
-#  Unique Number: 50725
-
-#  Date Created: 3/4
-
-#  Date Last Modified: 3/4
-
+# Background: Vyasa has to complete a programming assignment overnight. 
+# This is how he plans to write the program. He will write the first v lines of code, then drink his first cup of coffee. Since his productivity has gone down by a factor of k he will write v // k lines of code. He will have another cup of coffee and then write v // k**2 lines of code. He will have another cup of coffee and write v // k**3 lines of code and so on. He will collapse and fall asleep when v // k ** p becomes 0.
+# Now Vyasa does want to complete his assignment and maximize on his sleep. So he wants to figure out the minimum allowable value of v for a given productivity factor that will allow him to write at least n lines of code before he falls asleep.
+# see input file work.txt
 
 # binary search for min v value
 def binary_search(n, k):
