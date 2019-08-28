@@ -1,18 +1,4 @@
-# File: Blackjack.py
-
-  # Description: hw 8
-
-  # Student's Name: Melanie Sifen
-
-  # Student's UT EID: MS69768
-
-  # Course Name: CS 313E 
-
-  # Unique Number: 50725
-
-  # Date Created: 2/25
-
-  # Date Last Modified: 2/25
+# Description: This program simulates a game of blackjack
   
 import random
 
@@ -70,6 +56,7 @@ class Deck (object):
   # constructor
   def __init__ (self, num_decks = 1):
     self.deck = []
+    self.num_decks = num_decks
     for i in range (num_decks):
       for suit in Card.SUITS:
         for rank in Card.RANKS:
@@ -146,8 +133,8 @@ class Dealer (Player):
       return Player.__str__(self)
 
 class Blackjack (object):
-  def __init__ (self, num_players = 1):
-    self.deck = Deck ()
+  def __init__ (self, num_players = 1, num_decks = 1):
+    self.deck = Deck (num_decks)
     self.deck.shuffle()
 
     # create the number of Player objects
@@ -210,15 +197,21 @@ class Blackjack (object):
 
   
 def main():
+  # prompt the user to enter the number of decks
+  num_decks = int(input('Enter number of card decks to play with: '))
+  while ((num_decks < 1) or (num_decks > 100)):
+    num_decks = int(input("Enter a number between 1 and 100: "))
+    
   # prompt the user to enter the number of players
   num_players = int (input ('Enter number of players: '))
-  while ((num_players < 1) or (num_players > 6)):
+  while ((num_players < 1) or (num_players > (num_decks * 6))):
     num_players = int (input ('Enter number of players: '))
+  
 
   print()
     
   # create the Blackjack object
-  game = Blackjack (num_players)
+  game = Blackjack (num_players, num_decks)
 
   # play the game
   game.play()
