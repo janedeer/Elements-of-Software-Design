@@ -1,4 +1,7 @@
 # Description: This program simulates a game of blackjack
+# User can change the number of card decks used and the number of players
+# Card suits are represented respectively:
+# C, D, H, S = Clubs, Diamonds, Hearts, Spades
   
 import random
 
