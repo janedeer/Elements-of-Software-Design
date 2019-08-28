@@ -1,19 +1,7 @@
-#  File: Intervals.py
-
-#  Description: hw 2
-
-#  Student Name: Melanie Sifen
-
-#  Student UT EID: MS69768
-
-#  Course Name: CS 313E
-
-#  Unique Number: 50725
-
-#  Date Created: 2/2/19
-
-#  Date Last Modified: 2/4/19
-
+#  Description: This program can collapse overlapping intervals into a single interval.
+# Additionally, it prints the smallest set of non-intersecting intervals in ascending order of the lower end of the interval.
+# The input data will be in a file called intervals.txt. 
+# see test input data intvervals1-5.text
 
 # this function collapses the intervals from main function
 def collapse(myList):
@@ -61,12 +49,12 @@ def main():
     collapsed_data = collapse(sorted_data)
     ordered_data = order(collapsed_data)
     
-    print("None-intersecting Intervals:")
+    print("Non-intersecting Intervals:")
     for interval in collapsed_data:
         print(interval)
 
     print()
-    print("Non-intersection Intervals in order of size:")
+    print("Non-intersecting Intervals in order of size:")
     for num in ordered_data:
         print(num[1])
     
