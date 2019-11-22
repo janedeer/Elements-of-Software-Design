@@ -1,7 +1,7 @@
 #  Description: This program can collapse overlapping intervals into a single interval.
 # Additionally, it prints the smallest set of non-intersecting intervals in ascending order of the lower end of the interval.
 # The input data will be in a file called intervals.txt. 
-# see test input data intvervals1-5.text
+# see test input data intervals1-5.text
 
 # this function collapses the intervals from main function
 def collapse(myList):
